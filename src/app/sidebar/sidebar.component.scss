@@ -1,0 +1,76 @@
+.sidebar {
+  position: fixed;
+  width: 250px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  z-index: 5;
+  background-color: #fff; /* يمكن تعديلها حسب رغبتك */
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
+  &.hidden {
+    transform: translateX(-100%);
+    background-color: transparent; /* إخفاء الخلفية عندما يكون الشريط الجانبي مخفي */
+  }
+
+  .logo {
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      color: black;
+      border: 1px solid rgb(208, 208, 208);
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+      font-family:'Times New Roman';
+
+      &.active {
+        box-shadow: 0 4px 8px 0 rgba(241, 202, 62, 0.9);
+        background: #F29724;
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        box-shadow: 0 4px 8px 0 rgba(221, 219, 215, 0.9);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  border: none ;
+  z-index: 10;
+  
+}
+
+@media (min-width: 768px) {
+  .toggle-btn {
+    display: none;
+  }
+}
+
+.meals-container {
+  transition: background-color 0.3s ease;
+
+  &.sidebar-visible {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+

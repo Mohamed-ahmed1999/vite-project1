@@ -1,0 +1,20 @@
+
+
+<div class="sidebar" [ngClass]="{'hidden': isSidebarHidden}">
+  <div class="logo">
+    <img src="images/logo-BfNap0Pe.png" alt="">
+  </div>
+  <div class="text">
+    <h1 [class.active]="activeSection === 'meals'" (click)="activeSection = 'meals'">🍽️ Meals</h1>
+    <h1 >🍽️ Ingredients</h1>
+    <h1 >🍽️ Area</h1>
+  </div >
+</div>
+
+<button class="toggle-btn" (click)="toggleSidebar()">
+  <i class="fa-solid fa-pause"></i>
+</button>
+
+
+
+

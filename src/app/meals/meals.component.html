@@ -1,0 +1,38 @@
+<div class="food">
+  <div class="main-content">
+    <h1>Learn, Cook, Eat Your Food</h1>
+
+    <div class="category-buttons">
+      <button *ngFor="let category of categories" class="btn" 
+        [class.active]="activeCategory === category" (click)="fetchMeals(category)">
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="mobile-menu">
+      <button (click)="toggleMenu()" class="menu-btn">{{ activeCategory }}</button>
+      <div *ngIf="showMenu" class="dropdown-menu">
+        <button *ngFor="let category of categories" class="btn" 
+          [class.active]="activeCategory === category" (click)="fetchMeals(category)">
+          {{ category }}
+        </button>
+      </div>
+    </div>
+
+    <div class="meal">
+      <div *ngFor="let item of meals" class="meal-card">
+        <div class="meal-img">
+          <img [src]="item.meal.strMealThumb" alt="{{ item.meal.strMeal }}">
+        </div>
+        <h3>{{ item.meal.strMeal.split(' ').slice(0, 2).join(' ') }}</h3>
+        <p *ngIf="item.country">
+          <i class="fa-solid fa-earth-americas"></i> {{ item.country }}
+        </p>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
